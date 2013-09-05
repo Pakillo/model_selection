@@ -75,11 +75,11 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 *** left
 
-![](assets/img/olden1.png)
+![](assets/img/olden1.PNG)
 
 *** right
 
-![](assets/img/olden2.png)
+![](assets/img/olden2.PNG)
 
 
 ---
@@ -133,7 +133,7 @@ Preferred method, but
 
 <br>
 
-![](assets/img/AIC.png)
+![](assets/img/AIC.PNG)
 
 * First term: model fit (deviance - log likelihood)
 * k: number of estimated parameters (penalisation for model complexity)
@@ -149,7 +149,7 @@ Preferred method, but
 
 <br>
 
-![](assets/img/DIC.png)
+![](assets/img/DIC.PNG)
 
 * First term: posterior deviance (Bayesian)
 * ![](assets/img/pDIC.png) effective number of parameters 
@@ -184,7 +184,7 @@ Preferred method, but
 
 <br>
 
-![](assets/img/BIC.png)
+![](assets/img/BIC.PNG)
 
 * Larger penalty with large datasets (favouring simpler models)
 
@@ -229,11 +229,11 @@ Preferred method, but
 
 <br>
 
-![](assets/img/Gelman.png)
+![](assets/img/gelman.PNG)
 
 <br>
 
-![](assets/img/Breiman.png)
+![](assets/img/breiman.PNG)
 
 
 ---
