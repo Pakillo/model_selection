@@ -87,11 +87,11 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 *** left
 
-![](assets/img/olden1.png)
+![](olden1.png)
 
 *** right
 
-![](assets/img/olden2.png)
+![](olden2.png)
 
 
 ---
@@ -138,7 +138,7 @@ Wenger & Olden 2012 Methods Ecol Evol
 ## AIC
 
 
-![](assets/img/AIC formula.png)
+![](AIC formula.png)
 
 * First term: model fit (deviance - log likelihood)
 * k: number of estimated parameters (penalisation for model complexity)
@@ -151,10 +151,10 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 ## DIC
 
-![](assets/img/DIC formula.png)
+![](DIC formula.png)
 
 * First term: posterior deviance (Bayesian)
-* ![](assets/img/pDIC.png) effective number of parameters 
+* ![](pDIC.png) effective number of parameters 
     * (influenced by priors and the amount of pooling in hierarchical models)
 
 
@@ -182,7 +182,7 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 * Misleading name
 
-![](assets/img/BIC formula.png)
+![](BIC formula.png)
 
 * Larger penalty with large datasets (favouring simpler models)
 
@@ -219,9 +219,9 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 ## To read more
 
-![](assets/img/Gelman paper.png)
+![](Gelman paper.png)
 
-![](assets/img/Breiman.png)
+![](Breiman.png)
 
 
 ---
