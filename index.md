@@ -67,8 +67,11 @@ mode        : selfcontained # {standalone, draft}
 ## An example with machine learning
 
 
+<br>
+
 Wenger & Olden 2012 Methods Ecol Evol
 
+<br>
 
 *** left
 
@@ -83,7 +86,11 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 ## Evaluating models' predictive accuracy
 
-> * Cross-validation (k fold, leave one out...)
+<br>
+
+* Cross-validation (k fold, leave one out...)
+
+<br>
 
 > * Alternatives:
     * AIC
@@ -107,7 +114,9 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 ## Cross-validation
 
-**Preferred** method, but
+<br>
+
+Preferred method, but
 
 >  * Requires splitting data (difficult for structured data: space, time)
 >  * Data may not be independent (e.g. due to spatial or temporal autocorrelation)
@@ -122,6 +131,7 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 ## AIC
 
+<br>
 
 ![](assets/img/AIC.png)
 
@@ -135,6 +145,9 @@ Wenger & Olden 2012 Methods Ecol Evol
 ---
 
 ## DIC
+
+
+<br>
 
 ![](assets/img/DIC.png)
 
@@ -151,6 +164,8 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 ## WAIC
 
+<br>
+
 * Similar (but not the same) structure as AIC, DIC
 * Quite new (2010) and promising
 * Fully Bayesian: using posterior distribution rather than point estimate (AIC, DIC)
@@ -165,7 +180,9 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 ## What about BIC?
 
-* Misleading name
+* (misleading name)
+
+<br>
 
 ![](assets/img/BIC.png)
 
@@ -181,6 +198,9 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 ## Final thoughts
 
+<br>
+<br>
+
 > * No information criteria is panacea: all have problems
 > * They give average out-of-sample prediction error, but prediction errors can differ substantially within the same dataset (e.g. populations, species)
 > * Sometimes better models rank poorly. So, combine with thorough model checks
@@ -193,8 +213,11 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 ## Conclusions
 
+<br>
+<br>
+
 > * AIC not designed for hierarchical models or prior information
-> * DIC widely used, but still has some flaws and can fail. Not included in STAN
+> * DIC widely used, but still has some flaws and can fail [not included in STAN]
 > * WAIC attractive, but still not easily applicable
 > * Use cross-validation whenever possible
 
@@ -204,11 +227,21 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 ## To read more
 
+<br>
+
 ![](assets/img/Gelman.png)
+
+<br>
 
 ![](assets/img/Breiman.png)
 
 
 ---
 
-## END: hope it was useful!
+## END
+
+<br>
+
+I hope it was useful!
+
+
