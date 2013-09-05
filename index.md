@@ -1,7 +1,7 @@
 ---
 title       : Model selection and balanced complexity 
 subtitle    : AIC, BIC, DIC and beyond
-author      : Francisco Rodriguez-Sanchez
+author      : Francisco Rodriguez-Sanchez (http://sites.google.com/site/rodriguezsanchezf)
 job         : 05/09/2013
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
@@ -72,11 +72,11 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 *** left
 
-![](olden1.png)
+![](assets/img/olden1.png)
 
 *** right
 
-![](olden2.png)
+![](assets/img/olden2.png)
 
 
 ---
@@ -123,7 +123,7 @@ Wenger & Olden 2012 Methods Ecol Evol
 ## AIC
 
 
-![](AIC formula.png)
+![](assets/img/AIC.png)
 
 * First term: model fit (deviance - log likelihood)
 * k: number of estimated parameters (penalisation for model complexity)
@@ -136,10 +136,10 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 ## DIC
 
-![](DIC formula.png)
+![](assets/img/DIC.png)
 
 * First term: posterior deviance (Bayesian)
-* ![](pDIC.png) effective number of parameters 
+* ![](assets/img/pDIC.png) effective number of parameters 
     * (influenced by priors and the amount of pooling in hierarchical models)
 
 
@@ -167,7 +167,7 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 * Misleading name
 
-![](BIC formula.png)
+![](assets/img/BIC.png)
 
 * Larger penalty with large datasets (favouring simpler models)
 
@@ -204,9 +204,9 @@ Wenger & Olden 2012 Methods Ecol Evol
 
 ## To read more
 
-![](Gelman paper.png)
+![](assets/img/Gelman.png)
 
-![](Breiman.png)
+![](assets/img/Breiman.png)
 
 
 ---
