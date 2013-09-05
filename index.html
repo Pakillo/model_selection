@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Model selection and balanced complexity</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Model selection and balanced complexity">
+  <meta name="author" content="Francisco Rodriguez-Sanchez">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Model selection and balanced complexity</h1>
+        <h2>AIC, BIC, DIC and beyond</h2>
+        <p>Francisco Rodriguez-Sanchez<br/>05/09/2013</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Why model selection?</h2>
+  </hgroup>
+  <article>
+    <p><br></p>
+
+<ul class = "build">
+<li><p>Nested models: how much complexity is necessary to fit the data?</p></li>
+<li><p>Non nested models: compare fit of different models</p>
+
+<ul>
+<li>(Note that building a larger model may be better than choosing any one of them!)</li>
+</ul></li>
+</ul>
+
+<p><br></p>
+
+<ul class = "build">
+<li><p>Larger models usually fit data better</p></li>
+<li><p>Models usually perform much worse with independent data than with observed (calibration) data</p></li>
+<li><p>Need to account for model complexity (overfitting)</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Overfitting and balanced model complexity</h2>
+  </hgroup>
+  <article>
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="figure/unnamed-chunk-3.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" /></p>
+
+<p><img src="figure/unnamed-chunk-4.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" /></p>
+
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="figure/unnamed-chunk-5.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" /></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>An example with machine learning</h2>
+  </hgroup>
+  <article>
+    <p>Wenger &amp; Olden 2012 Methods Ecol Evol</p>
+
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="assets/img/olden1.png" alt=""></p>
+
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="assets/img/olden2.png" alt=""></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Evaluating models&#39; predictive accuracy</h2>
+  </hgroup>
+  <article>
+    <ul class = "build">
+<li><p>Cross-validation (k fold, leave one out...)</p></li>
+<li><p>Alternatives:</p>
+
+<ul>
+<li>AIC</li>
+<li>BIC</li>
+<li>DIC</li>
+<li>WAIC</li>
+</ul></li>
+<li><p>All these attempt an impossible task: </p>
+
+<ul>
+<li>estimating out-of-sample prediction error without external data or further model fits!</li>
+</ul></li>
+<li><p>All these methods have flaws!</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Cross-validation</h2>
+  </hgroup>
+  <article>
+    <p><strong>Preferred</strong> method, but</p>
+
+<ul class = "build">
+<li>Requires splitting data (difficult for structured data: space, time)</li>
+<li>Data may not be independent (e.g. due to spatial or temporal autocorrelation)</li>
+<li>Computationally expensive (requires fitting many models)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>AIC</h2>
+  </hgroup>
+  <article>
+    <p><img src="assets/img/AIC%20formula.png" alt=""></p>
+
+<ul>
+<li>First term: model fit (deviance - log likelihood)</li>
+<li>k: number of estimated parameters (penalisation for model complexity)</li>
+</ul>
+
+<ul class = "build">
+<li>Doesn&#39;t work with hierarchical models or informative priors!</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>DIC</h2>
+  </hgroup>
+  <article>
+    <p><img src="assets/img/DIC%20formula.png" alt=""></p>
+
+<ul>
+<li>First term: posterior deviance (Bayesian)</li>
+<li><img src="assets/img/pDIC.png" alt=""> effective number of parameters 
+
+<ul>
+<li>(influenced by priors and the amount of pooling in hierarchical models)</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>WAIC</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Similar (but not the same) structure as AIC, DIC</li>
+<li>Quite new (2010) and promising</li>
+<li>Fully Bayesian: using posterior distribution rather than point estimate (AIC, DIC)</li>
+<li>But requires splitting data </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>What about BIC?</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Misleading name</li>
+</ul>
+
+<p><img src="assets/img/BIC%20formula.png" alt=""></p>
+
+<ul>
+<li>Larger penalty with large datasets (favouring simpler models)</li>
+</ul>
+
+<ul class = "build">
+<li>Not intended for assessing out-of-sample model performance</li>
+<li>Problematic</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Final thoughts</h2>
+  </hgroup>
+  <article>
+    <ul class = "build">
+<li>No information criteria is panacea: all have problems</li>
+<li>They give average out-of-sample prediction error, but prediction errors can differ substantially within the same dataset (e.g. populations, species)</li>
+<li>Sometimes better models rank poorly. So, combine with thorough model checks</li>
+<li>Use small set of biologically meaningful candidate models: model selection procedure can strongly overfit the data</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Conclusions</h2>
+  </hgroup>
+  <article>
+    <ul class = "build">
+<li>AIC not designed for hierarchical models or prior information</li>
+<li>DIC widely used, but still has some flaws and can fail. Not included in STAN</li>
+<li>WAIC attractive, but still not easily applicable</li>
+<li>Use cross-validation whenever possible</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>To read more</h2>
+  </hgroup>
+  <article>
+    <p><img src="assets/img/Gelman%20paper.png" alt=""></p>
+
+<p><img src="assets/img/Breiman.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>END: hope it was useful!</h2>
+  </hgroup>
+  <article>
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>
